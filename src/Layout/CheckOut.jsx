@@ -22,7 +22,7 @@ const CheckOut = () => {
             service_id: _id,
             img
         }
-        fetch('http://localhost:3000/bookings', {
+        fetch('https://cardoctorserver.onrender.com/bookings', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'

@@ -5,7 +5,7 @@ import BookingRow from "./BookingRow";
 const Booking = () => {
     const { user } = useContext(AuthContext)
     const [bookings, setBookings] = useState([])
-    const url = `http://localhost:3000/bookings?email=${user?.email}`;
+    const url = `https://cardoctorserver.onrender.com/bookings?email=${user?.email}`;
 
     useEffect(() => {
         if (user.email) {
@@ -18,7 +18,7 @@ const Booking = () => {
     const handleDelete = (_id) => {
         const prossed = confirm('Do you want to Prosed?');
         if (prossed) {
-            fetch(`http://localhost:3000/bookings/${_id}`, {
+            fetch(`https://cardoctorserver.onrender.com/bookings/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -35,7 +35,7 @@ const Booking = () => {
     }
 
     const handleConfirm = (_id) => {
-        fetch(`http://localhost:3000/bookings/${_id}`, {
+        fetch(`https://cardoctorserver.onrender.com/bookings/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
